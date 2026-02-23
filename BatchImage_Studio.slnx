@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BatchImage_Studio.csproj">
+    <BuildType Project="Release" />
+  </Project>
+</Solution>
