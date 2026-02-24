@@ -48,6 +48,21 @@ namespace BatchImage_Studio
         {
             InitializeComponent();
             QuestPDF.Settings.License = LicenseType.Community;
+            this.StateChanged += MainWindow_StateChanged;
+        }
+
+        private void MainWindow_StateChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                MainBorder.BorderThickness = new Thickness(0);
+                MainBorder.Margin = new Thickness(7); // აცილებს ფანჯარას ამოჭრას ეკრანის კიდეებზე
+            }
+            else
+            {
+                MainBorder.BorderThickness = new Thickness(1);
+                MainBorder.Margin = new Thickness(0);
+            }
         }
 
         #region Save & Load Settings
@@ -902,7 +917,10 @@ namespace BatchImage_Studio
             ProgressBarIndicator.IsIndeterminate = false;
         }
         #endregion
+
     }
+
+
 
     public class AppSettings
     {
